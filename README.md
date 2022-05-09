@@ -2,19 +2,23 @@
 Sample Terraform files to create S3 bucket in AWS
 # terraform-on-aws-repo
 
-Pre-requisites:
+# Pre-requisites:
 1) Install Terraform on your EC2 instance or Windows or Mac machine. 
    I installed [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) in a macbook pro host machine. 
 2) You need an [AWS account](https://aws.amazon.com/es/premiumsupport/knowledge-center/create-and-activate-aws-account/).
 3) You need a AmazonS3FullAccess. IAM->access management->Roles->Create Role-> search AmazonS3FullAccess -> Create 
 
-You can provision resources in AWS cloud using Terraform by two ways as mentioned below:
+Every time you run the two commands, a resource of type S3 will be created called my-s3-bucket-BLABLABLA
+Of course it will not be called that, AWS will assign you an identification number.
+
+The file that you must modify for example so that the changes appear in one region or another is variables.tf
+
+# You can provision resources in AWS cloud using Terraform by two ways as mentioned below:
 ```
 1) AWS Access keys + secret keys (un-secure way)
 2) Create an IAM Role with AmazonS3FullAccess Policy. (more secure way) --> I did this.
 3) Clone this repo, then, in the project folder, run the next two commands, terraform init, terraform apply.
 ```
-output:
 
 ```
 zsh 5330 main% terraform init 
@@ -40,12 +44,8 @@ should now work.
 If you ever set or change modules or backend configuration for Terraform,
 rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
-```
 
-```
-(base) [lun 22/05/09 10:50 CEST][s000][x86_64/darwin21.0/21.4.0][5.8]
-<aironman@MacBook-Pro-de-Alonso:~/git/terraform-on-aws-repo
-terraform apply
+zsh 5330 main% terraform apply
 
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
