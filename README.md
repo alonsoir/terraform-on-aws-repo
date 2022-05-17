@@ -19,7 +19,7 @@ The file that you must modify for example so that the changes appear in one regi
 2) Create an IAM Role with AmazonS3FullAccess Policy. (more secure way) --> I did this.
 3) Clone this repo, then, in the project folder, run the next commands, 
 
-terraform init, terraform plan -out tf-deployS3 terraform apply -out tf-deployS3
+terraform init, terraform plan -out tf-deployS3 terraform apply tf-deployS3
 ```
 
 ```
